@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfilter/react-native-onboarding-swiper"
+    "url": "git+https://github.com/erbunao/react-native-onboarding-swiper"
   },
   "keywords": [
     "React",
@@ -26,9 +26,9 @@
   "author": "Gosha Arinich, Johannes Filter",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jfilter/react-native-onboarding-swiper/issues"
+    "url": "https://github.com/erbunao/react-native-onboarding-swiper/issues"
   },
-  "homepage": "https://github.com/jfilter/react-native-onboarding-swiper#readme",
+  "homepage": "https://github.com/erbunao/react-native-onboarding-swiper#readme",
   "dependencies": {
     "tinycolor2": "^1.4.1"
   },
