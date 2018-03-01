@@ -83,7 +83,6 @@ class Onboarding extends Component {
       alterBottomColor,
       bottomBarHeight,
       bottomBarHighlight,
-      bottomBarStyles,
       showSkip,
       showNext,
       showDone,
@@ -98,6 +97,7 @@ class Onboarding extends Component {
     } = this.props;
     const currentPage = pages[this.state.currentPage];
     const currentBackgroundColor = currentPage.backgroundColor;
+    const currentBottomBarStyles = currentPage.bottomBarStyles;
     const isLight = tinycolor(currentBackgroundColor).getBrightness() > 180;
     const barStyle = isLight ? 'dark-content' : 'light-content';
 
@@ -144,7 +144,7 @@ class Onboarding extends Component {
           gone={() => this.setState({ gone: true })}
           isLight={isLight}
           bottomBarHighlight={bottomBarHighlight || alterBottomColor}
-          bottomBarStyles={bottomBarStyles}
+          bottomBarStyles={currentBottomBarStyles || {}}
           bottomBarHeight={bottomBarHeight}
           showSkip={showSkip}
           showNext={showNext}
@@ -197,7 +197,6 @@ Onboarding.propTypes = {
 
 Onboarding.defaultProps = {
   bottomBarHighlight: true,
-  bottomBarStyles: {},
   bottomBarHeight: 60,
   showSkip: true,
   showNext: true,
