@@ -9,6 +9,7 @@ const Pagination = ({
   currentPage,
   isLight,
   bottomBarHighlight,
+  bottomBarStyles,
   bottomBarHeight,
   showSkip,
   showNext,
@@ -68,6 +69,7 @@ const Pagination = ({
         height: bottomBarHeight,
         ...styles.container,
         ...(bottomBarHighlight ? styles.overlay : {}),
+        ...bottomBarStyles,
       }}
     >
       <View style={styles.buttonLeft}>{SkipButtonFinal}</View>

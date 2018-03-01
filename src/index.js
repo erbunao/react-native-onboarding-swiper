@@ -83,6 +83,7 @@ class Onboarding extends Component {
       alterBottomColor,
       bottomBarHeight,
       bottomBarHighlight,
+      bottomBarStyles,
       showSkip,
       showNext,
       showDone,
@@ -143,6 +144,7 @@ class Onboarding extends Component {
           gone={() => this.setState({ gone: true })}
           isLight={isLight}
           bottomBarHighlight={bottomBarHighlight || alterBottomColor}
+          bottomBarStyles={bottomBarStyles}
           bottomBarHeight={bottomBarHeight}
           showSkip={showSkip}
           showNext={showNext}
@@ -195,6 +197,7 @@ Onboarding.propTypes = {
 
 Onboarding.defaultProps = {
   bottomBarHighlight: true,
+  bottomBarStyles: {},
   bottomBarHeight: 60,
   showSkip: true,
   showNext: true,
