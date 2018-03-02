@@ -2,12 +2,12 @@ import { Dimensions, Text, View } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Page = ({ isLight, image, title, subtitle, width, height }) => {
+const Page = ({ isLight, image, title, subtitle, width, height, ...props }) => {
   let titleElement = title;
   if (typeof title === 'string' || title instanceof String) {
     titleElement = (
-      <View style={styles.padding}>
-        <Text style={[styles.title, isLight ? styles.titleLight : {}]}>
+      <View style={[styles.padding, (props.titleContainerStyles || {})]}>
+        <Text style={[styles.title, isLight ? styles.titleLight : {}, (props.titleStyles || {})]}>
           {title}
         </Text>
       </View>
@@ -17,8 +17,8 @@ const Page = ({ isLight, image, title, subtitle, width, height }) => {
   let subtitleElement = subtitle;
   if (typeof subtitle === 'string' || subtitle instanceof String) {
     subtitleElement = (
-      <View style={styles.padding}>
-        <Text style={[styles.subtitle, isLight ? styles.subtitleLight : {}]}>
+      <View style={[styles.padding, (props.subtitleContainerStyles || {})]}>
+        <Text style={[styles.subtitle, isLight ? styles.subtitleLight : {}, (props.subtitleStyles || {})]}>
           {subtitle}
         </Text>
       </View>
@@ -27,7 +27,7 @@ const Page = ({ isLight, image, title, subtitle, width, height }) => {
 
   return (
     <View style={[styles.container, { width, height }]}>
-      <View style={styles.image}>{image}</View>
+      <View style={[styles.image, (props.imageContainerStyles || {})]}>{image}</View>
       {titleElement}
       {subtitleElement}
     </View>
